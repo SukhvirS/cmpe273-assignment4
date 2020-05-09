@@ -68,8 +68,9 @@ class ConsistentHashNodeRing():
 
     
 def test():
-    ring = ConsistentHashNodeRing(NODES)
-    ring.add_virtual_nodes(2)
+    ring = ConsistentHashNodeRing(NODES, 400, 3)
+    # print(len(ring.hash_ring))
+    # print(ring.hash_ring)
 
     x = hash_code_hex('sdfsdf'.encode())
     print(ring.get_nodes(x))
